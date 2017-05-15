@@ -26,7 +26,7 @@ def callback(data):
     pprint(job.result)
 
 def scene_analysis():
-    rospy.init_node('scene_analysis', anonymous=True)
+    rospy.init_node('scene_analysis', anonymous=False)
     rospy.Subscriber("image", Image, callback)
     rospy.spin()
 

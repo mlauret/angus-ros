@@ -6,10 +6,19 @@ project(angus_ros)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   rospy
-  std_msgs
   sensor_msgs
   message_generation
+  cv_bridge
 )
+
+find_package(OpenCV)
+#Flag for OpenCV on Indigo/Kinetic
+if(OpenCV_VERSION VERSION_LESS "3.0")
+# use 2.4 modules
+else()
+# use 3.x modules
+endif()
+
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
